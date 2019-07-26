@@ -1,0 +1,45 @@
+database:
+  driverClass: com.mysql.jdbc.Driver
+  url: jdbc:mysql://localhost:3306/veidblockledger
+  user: root
+  password: 1234 
+  maxWaitForConnection: 1s
+  validationQuery: "SELECT 1"
+  validationQueryTimeout: 3s
+  minSize: 8
+  maxSize: 32
+  checkConnectionWhileIdle: false
+  evictionInterval: 10s
+  minIdleTime: 1 minute
+  checkConnectionOnBorrow: true
+
+ipv:
+  host: http://localhost
+  port: 8000
+  timeout: 500ms
+  connectionTimeout: 500ms
+  timeToLive: 1h
+  cookiesEnabled: false
+  maxConnections: 1024
+  maxConnectionsPerRoute: 1024
+  keepAlive: 0ms
+  retries: 0
+  
+server:
+  applicationConnectors:
+  - type: http 
+    port: 10000
+  adminConnectors:
+  - type: http
+    port: 10001
+    
+logging:
+  level: INFO
+  loggers:
+    "io.dropwizard": INFO  
+    "org.skife.jdbi.v2": TRACE 
+  appenders:
+    - type: console
+      threshold: ALL
+      timeZone: UTC
+      target: stdout      

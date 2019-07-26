@@ -1,0 +1,3 @@
+authServer = http://localhost:9000
+ipvServer = http://localhost:8000
+ledgerServer = http://localhost:10000
